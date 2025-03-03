@@ -1,0 +1,22 @@
+// Sequence Diagram
+// ILAN PERETZ | 7.1.2025
+
+@startuml "sequence-diagram"
+   
+   actor "User" as user
+   
+   autonumber
+   user -> client:click Login 
+   client -> server:GET http://192.168.27.50:8080/login
+   server -> db:findUserByPW()
+   
+   db --> server: userExistsInDB
+   server --> client: WelcomePage
+   client --> user: welcome!
+   
+   autonumber 4
+   db --> server: userNotExistsInDB
+   server --> client: LoginPage with error msg
+   client --> user: login
+   
+@enduml

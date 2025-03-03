@@ -1,0 +1,44 @@
+// Class Diagram
+// ILAN PERETZ | 7.1.2025
+
+@startuml class-diagram
+skinparam classAttributeIconSize 0
+   class Event
+   {
+      -String description
+      -MyDate date
+   }
+
+   class Animal
+   {
+      -double weight;
+      -List<Event> eventsHistory
+
+      +void setWeight(double w)
+      +double getWeight()
+      +void addEvent(Event event)
+      +void removeEvent(Event event)
+      +Event getEvent(int id)
+      +int eventSize()
+   } 
+
+   Animal o-- Event
+   Event *-- MyDate
+
+   Animal <|-- Mamal
+   Animal <|-- Bird
+
+   Mamal <|-- Dog
+   Mamal <|-- Dolphin
+
+   Bird <|-- Parrot
+
+   interface ISingable
+   {
+      +void sing(String song)
+   }
+
+   ISingable <|.. Parrot
+   ISingable <|.. Dolphin
+   
+@enduml

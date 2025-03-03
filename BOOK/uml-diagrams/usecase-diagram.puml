@@ -1,0 +1,85 @@
+// UseCase Diagram
+// ILAN PERETZ | 7.1.2025
+
+@startuml "usecase-diagram"
+
+   left to right direction
+   actor "User" as user1 
+   ' actor "Admin" as user2
+
+   rectangle "Software System" {
+      usecase "Login" as useCase1 
+      usecase "Register" as useCase2 
+      usecase "Core" as useCase3 
+      usecase "Reports" as useCase4 
+   } 
+
+   user1 --> useCase1
+   user1 --> useCase2
+   user1 --> useCase3
+   user1 --> useCase4
+@enduml
+
+ ' !theme toy
+   ' skinparam actorStyle awesome
+   ' left to right direction
+   ' actor "user1" as user1 
+   ' actor "user1\n(admin)" as adminuser1 #gray;line:blue;line.bold;text:blue
+
+   ' rectangle "System Use Cases" {
+   '    usecase "Login" as useCase1 #line.bold
+   '    usecase "Register" as useCase2 #line.bold
+   '    usecase "Send Message" as useCase3 #line.bold
+   '    usecase "Recive Message" as useCase4 #line.bold
+   '    usecase "Show Messages" as useCase5 #line.bold
+   ' } 
+
+   ' user1 --> useCase1
+   ' user1 --> useCase2
+   ' user1 --> useCase3
+   ' user1 --> useCase4
+
+   ' adminuser1 --> useCase1 #line:blue;line.dashed
+   ' adminuser1 --> useCase2 #line:blue;line.dashed
+   ' adminuser1 --> useCase3 #line:blue;line.dashed
+   ' adminuser1 --> useCase4 #line:blue;line.dashed
+   ' adminuser1 --> useCase5 #line:blue;line.dashed
+
+   ' note right of useCase1 
+   '    התחברות 
+   '    ע"י שם-משתמש וסיסמה
+   ' end note
+
+   ' note right of useCase2
+   '    רישום 
+   '    ע"י הזנת נתונים
+   ' end note 
+
+   ' note right of useCase3
+   '    שליחת הודעה מוצפנת 
+   '    Send increepted message
+   ' end note 
+
+   ' note right of useCase4
+   '    קבלת הודעה מוצפנת 
+   '    אפשר גם בעברית
+   ' end note
+
+   ' note right of useCase5
+   '    הצגת כל ההודעות 
+   '    בצורה מרוכזת ע"י גריד
+   ' end note 
+
+   ' note bottom of user1 : Registered User1
+
+   ' package "LogicTier" {
+   '    usecase "Pages" as useCase5
+   '    usecase "Services" as useCase6
+   '    usecase "Repositories" as useCase7
+   '    usecase "Rest Controller API" as useCase8
+   ' }
+
+   ' useCase3 --> useCase5
+
+   
+' @enduml
